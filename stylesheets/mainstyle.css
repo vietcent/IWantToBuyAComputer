@@ -1,0 +1,42 @@
+/* mainstyle.css
+Summer 2015
+Vincent Nguyen
+ */
+
+header{
+
+}
+
+body{
+
+}
+
+nav{
+
+}
+
+navigation{
+	text-align: center;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: inline;
+
+}
+
+li{
+	float: left;
+}
+
+a{
+	display: block;
+	width: 60px;
+}
+
+form{
+
+}
+
+footer{
+
+}
