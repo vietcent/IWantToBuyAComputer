@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
 <!--
-Assignment #
-Filename
+Final Project
+index.html
 Course / SLN
 Name
 -->
@@ -20,11 +20,77 @@ Name
     <title>I Want To Buy A Computer</title>
 
   </head>
+  <header>
+      <nav role="navigation">
+          <ul>
+              <li>
+                  <a href="index.htm">Home</a>
+              </li>
+
+              <li>
+                  <a href="productPage.htm">Products</a>
+              </li>
+
+              <li>
+                  <a href="servicePage.htm">Services</a>
+              </li>
+
+              <li>
+                  <a href="faq.htm">About Us</a>
+              </li>
+
+              <li>
+                  <a href="contactUs.htm">Contact US</a>
+              </li>
+          </ul>
+
+          <div id="mini-login">
+              <form method="post" action="showform.php">
+                  <fieldset>
+                      <h2 class="loginHere">Login Here</h2>
+                      <ul>
+                          <li>
+                              <label for="emailAddress">Account Email:</label>
+                              <input type="email" id="email" name="email" class="login"
+                              required
+                              placeholder="Enter registered email address" />
+                          </li>
+                          <li>
+                              <label for="password">Password:</label>
+                              <input type="password" id="password" name="password" class="login"
+                              required
+                              placeholder="Enter password here" />
+                          </li>
+
+                          <button type="submit" class="loginButton" value="Log In" />
+
+                          <a href="forgotPassword.php">Forgot Password?</a>
+                          <a href="registration.php">Create an Account</a>
+                      </ul>
+
+                  </fieldset>
+
+              </form>
+
+          </div>
+
+  </header>
 
   <body>
 
-      <div id="footer">
+      <div id="announcements">
+
       </div>
+
+      <footer>
+          <p><small>&copy; Vincent Nguyen 2015</small></p>
+          <p>Vincent Nguyen is a unemployed 2015 alumni from the W.P Carey School of Business and needs work so he can leave his parent's house.
+          </p>
+              <address>
+                  You may reach him at <a href="mailto:vqnguyen16@gmail.com">vqnguyen16@gmail.com</a>
+              </address>
+      </footer>
+
 
   </body>
 
