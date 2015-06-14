@@ -7,5 +7,6 @@ function formValidation(){
         alert("Name must be filled out");
         return false;
 
+
     }
 }

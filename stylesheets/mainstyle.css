@@ -3,6 +3,23 @@ Summer 2015
 Vincent Nguyen
  */
 
+a:link{
+	background-color: blue;
+
+}
+
+a:hover{
+	background-color: maroon;
+}
+
+a:visited{
+	background-color: purple;
+}
+
+a:focus:visited{
+	
+}
+
 header{
 
 }
