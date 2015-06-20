@@ -3,9 +3,22 @@
 // CIS 425
 // Vincent Nguyen
 
-var  image1,image2,image3 = new image();
-image1.src="";
-image2.src="";
-image3.src="";
+var imageCount = 1;
+var total = 5;
 
+function slide()
+{
+	var image = document.getElementsByClassName('img');
+	imageCount = imageCount + x;
 
+    if (imageCount > total) {
+        imageCount = 1;
+    }
+
+    if (imageCount < 1) {
+        imageCount = total;
+
+    }
+	image.src = "images/img" + imageCount + ".jpg";
+
+}

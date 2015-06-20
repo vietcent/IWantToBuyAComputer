@@ -3,55 +3,75 @@ Summer 2015
 Vincent Nguyen
  */
 
-a:link{
-	background-color: blue;
+
+
+
+#header{
 
 }
 
-a:hover{
-	background-color: maroon;
-}
-
-a:visited{
-	background-color: purple;
-}
-
-a:focus:visited{
-	
-}
-
-header{
+#body{
 
 }
 
-body{
-
+.announcements{
+	position: relative;
+	overflow: auto;
+}
+.announcements li{
+	list-style: none;
+}
+.announcements ul li{
+	float: left;
 }
 
-nav{
-
-}
-
-navigation{
+#navigation{
 	text-align: center;
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	display: inline;
-
 }
 
-li{
+#navigation li{
 	float: left;
+	display: inline;
 }
 
-a{
+#navigation li a{
 	display: block;
 	width: 60px;
 }
 
-form{
+.mini-login{
+	float: right;
+}
 
+.mini-login h3{
+
+}
+
+.mini-login form{
+	display: block;
+}
+
+.mini-login login{
+	font-size: 12px;
+	text-indent: 5px;
+	width: 300px;
+}
+
+.mini-login #forgotPassword{
+	float: right;
+	margin-top: 10px;
+	font-size: 11px;
+
+}
+
+.mini-login #createAccount{
+	float: right;
+	margin-top: 15px;
+	font-size: 11px;
 }
 
 footer{

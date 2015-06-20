@@ -7,6 +7,24 @@ Course / SLN
 Name
 -->
 
+<!-- Start of PHP Session -->
+<?php
+
+    // class server info
+    // $host = 'localhost';
+    // $user = 'vqnguye1';
+    // $password = 'cis425';
+    // $database = 'IW2BACdb';
+
+    // local server info
+
+    $host = 'localhost';
+    $user = 'root';
+    $password = 'root';
+    $database = 'IW2BACdb';
+  ?>
+  <!-- End of PHP Session -->
+
 <html lang="en">
 
   <head>
@@ -14,16 +32,21 @@ Name
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 
     <!-- Link tag for CSS -->
-    <link type="text/css" rel="stylesheet" href="stylesheet.css" />
-    
-    
+    <link type="text/css" rel="stylesheet" href="stylesheets/mainstyle.css" />
+
+    <!-- Link tag for Javascript -->
+    <script src ="code.jquery.com/jquery-latest.min.js"> </script>
+    <script src="jscode/Unslider.js"> </script>
+    <script type="text/javascript" src="jscode/shoppingCart.js"></script>
+
+
 
     <!-- Web Page Title -->
     <title>IW2BAC</title>
 
   </head>
   <header>
-      <nav class="navigation">
+      <div id="navigation">
           <ul>
               <li>
                   <a href="index.htm">Home</a>
@@ -45,11 +68,12 @@ Name
                   <a href="contactUs.htm">Contact US</a>
               </li>
           </ul>
+      </div>
 
-          <div id="mini-login">
+          <div class="mini-login">
               <form method="post" action="showform.php">
                   <fieldset>
-                      <h2 class="loginHere">Login Here</h2>
+                      <h3 class="loginHere">Login Here</h2>
                       <ul>
                           <li>
                               <label for="emailAddress">Account Email:</label>
@@ -66,8 +90,11 @@ Name
 
                           <input type="submit" class="loginButton" value="Log In" />
 
-                          <a href="forgotPassword.php">Forgot Password?</a>
-                          <a href="registration.php">Create an Account</a>
+                          <div id="forgotPassword"
+                          a href="forgotPassword.php">Forgot Password?</a>
+
+                          <div id="createAccount"
+                          a href="registration.php">Create an Account</a>
                       </ul>
 
                   </fieldset>
@@ -80,25 +107,15 @@ Name
 
   <body>
 
-<<<<<<< HEAD
       <div id="announcements">
-        
-
-=======
-      <div id="mini-login">
-
+          <ul>
+              <li>First</li>
+              <li>Second</li>
+              <li>Third</li>
+          </ul>
       </div>
 
-      <div id="navigationBar">
 
-      </div>
-
-      <div id="billboard">
-
-      </div>
-
-      <div id="footer">
->>>>>>> origin/master
       </div>
 
       <footer>
