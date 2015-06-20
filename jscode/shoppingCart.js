@@ -87,3 +87,49 @@ function get_order_total($db){
     }
     return $sum;
 }
+
+function add_to_cart($product_id, $quantity) {
+    // body...
+
+    if ($product_id < 1 || $quantity < 1) {
+        return;
+    }
+
+    if (is_array($_SESSION['cart'])) {
+        $exists_results = product_exists($product_id);
+        $exists = $exists_results[0];
+        $position = $exists_results[1];
+
+        if ($exists) {
+            $new_quantity = intval($_SESSION['cart'][$position]['productQuantity']);
+            $_SESSION['cart'][$max]['productQuantity'] = $new_quantity;
+        }
+        else {
+            $max = count($_SESSION['cart']);
+            $_SESSION['cart'][$max]['productId'] = $product_id;
+            $_SESSION['cart'][$max]['productQuantity'] = $quantity;
+        }
+    }
+    else {
+        $_SESSION['cart'] = array();
+        $_SESSION['cart'][0]['productId'] = $product_id;
+		$_SESSION['cart'][1]['productQuantity'] = $quantity;
+    }
+}
+
+function product_exists($product_id)
+{
+	$product_id = intval($product_id);
+	$max = count($_SESSION['cart']);
+	$flag = 0;
+	
+	for($i = 0; $i < $max; $i++)
+	{
+		if($product_id == $_SESSION['cart'][$i]['productId'])
+		{
+			$flag = 1;
+			break;
+		}
+	}
+	return array ($flag,$i);
+}
