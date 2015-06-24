@@ -2,7 +2,7 @@
 
 <!--
 Final Project
-index.html
+products.php
 Course / SLN
 Name
 -->
@@ -17,18 +17,22 @@ Name
     // $database = 'IW2BACdb';
 
     // local server info
-
     $host = 'localhost';
     $user = 'root';
     $password = 'root';
-    $database = 'IW2BACdb';
+    $database = 'IW2BAC';
 
-    // grabbing cookie
-    $cookieName = "customer";
-    $cookieExpire = time() + (86400*30);
-    setcookie($cookieName,"",$cookieExpire,"/");
+    //Set up MySQL connection
+    $dbc = mysqli_connect($host,$user,$password,$database) or die('Error connecting to MySQL server');
 
-    session_start("customer");
+    // //Begin Session
+    // session_start();
+
+    //Import necessary globals and functions
+    include("../include/productfunctions.php");
+    include("../include/IW2BAC.php");
+    require_once('../PhpConsole.phar');
+
 
 
   ?>
@@ -69,7 +73,7 @@ Name
               </li>
 
               <li>
-                  <a href="pages/products.php">Products</a>
+                  <a href="pages/productPage.htm">Products</a>
               </li>
 
               <li>
@@ -81,7 +85,7 @@ Name
               </li>
 
               <li>
-                  <a href="pages/contactUs.htm">Contact Us</a>
+                  <a href="pages/contactUs.htm">Contact US</a>
               </li>
           </ul>
       </div>
@@ -127,13 +131,34 @@ Name
   <main>
   </main>
 
-  <div id="announcements">
-      <table>
-      <colgroup id="productsAndServices">
-          <col span="2">
-      </colgroup>
-  </table>
-
+  <div id="products">
+      <form name="productform" action"">
+          <input type="hidden" name="productId" />
+          <input type="hidden" name="command" />
+          <table id="product_table">
+              <?php
+              $query = "SELECT * FROM IW2BAC_Product";
+              $result = mysqli_query($dbc,$query) or die("Error querying database");
+              while ($row = mysql_fetch_array($result)) {
+                  # code...
+                  echo '<tr>
+                  <td><img id="shopping_img" src="' . $row['productImage'] . '"/></td>
+                  <td><p><strong>' . $row['productName'] . '</strong></p>
+                  </td>
+                  <td><input type="button" value="Add to Cart" onclick="addToCart(' . $row['productId'] .')" />
+                  </td>
+                  </tr>';
+              }
+              if ($_REQUEST['command'] == 'add' && $_REQUEST['productId'] > 0) {
+                  # code...
+                  $productId = $_REQUEST['productId'];
+                  addToCart($productId, 1);
+                  header(shoppingCart.php);
+                  exit();
+              }
+              ?>
+          </table>
+      </form>
   </div>
 
 
