@@ -22,10 +22,21 @@ Name
     $user = 'root';
     $password = 'root';
     $database = 'IW2BACdb';
+
+    // grabbing cookie
+    $cookieName = "customer";
+    $cookieExpire = time() + (86400*30);
+    setcookie($cookieName,"",$cookieExpire,"/");
+
+    session_start("customer");
+
+
   ?>
   <!-- End of PHP Session -->
 
 <html lang="en">
+
+<body>
 
   <head>
     <!-- Meta tag -->
@@ -42,10 +53,15 @@ Name
 
 
     <!-- Web Page Title -->
-    <title>IW2BAC</title>
+    <title>I Want To Build a Computer</title>
 
   </head>
   <header>
+
+      <div id="websiteHead">
+      <p class="subtitle">"A safe and easy place to choose your next computer!"</p>
+  </div>
+
       <div id="navigation">
           <ul>
               <li>
@@ -53,19 +69,19 @@ Name
               </li>
 
               <li>
-                  <a href="productPage.htm">Products</a>
+                  <a href="pages/productPage.htm">Products</a>
               </li>
 
               <li>
-                  <a href="servicePage.htm">Services</a>
+                  <a href="pages/servicePage.htm">Services</a>
               </li>
 
               <li>
-                  <a href="faq.html">About Us</a>
+                  <a href="pages/faq.html">About Us</a>
               </li>
 
               <li>
-                  <a href="contactUs.htm">Contact US</a>
+                  <a href="pages/contactUs.htm">Contact US</a>
               </li>
           </ul>
       </div>
@@ -104,29 +120,34 @@ Name
           </div>
 
   </header>
+  <main>
+  </main>
 
-  <body>
+  <div id="announcements">
+      <table>
+      <colgroup id="productsAndServices">
+          <col span="2">
+      </colgroup>
+  </table>
 
-      <div id="announcements">
-          <ul>
-              <li>First</li>
-              <li>Second</li>
-              <li>Third</li>
-          </ul>
+  </div>
+
+
+  <footer>
+
+      <div id="socialLinks">
+          <a href="https://www.linkedin.com/in/vqnguyen16" target="_blank">Linkedin</a>
+          <a href="www.twitter.com" target="_blank">Twitter</a>
+          <a href="https://github.com/vietcent" target="_blank">Vincent's Github Account</a>
       </div>
 
-
-      </div>
-
-      <footer>
-          <p><small>&copy; Vincent Nguyen 2015</small></p>
-          <p>Vincent Nguyen is a unemployed 2015 alumni from the W.P Carey School of Business and needs work so he can leave his parent's house.
-          </p>
-              <address>
-                  You may reach him at <a href="mailto:vqnguyen16@gmail.com">vqnguyen16@gmail.com</a>
-              </address>
-      </footer>
-
+      <p><small>&copy; Vincent Nguyen 2015</small></p>
+      <p>Vincent Nguyen is a unemployed 2015 alumni from the W.P Carey School of Business and needs work so he can leave his parent's house.
+      </p>
+          <address>
+              You may reach him at <a href="mailto:vqnguyen16@gmail.com">vqnguyen16@gmail.com</a>
+          </address>
+  </footer>
 
   </body>
 

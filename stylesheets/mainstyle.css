@@ -4,13 +4,54 @@ Vincent Nguyen
  */
 
 
-
-
-#header{
+/* unvisited link */
+a:link{
+	text-decoration: none;
+	position: relative;
+	padding: 0 10px;
 
 }
 
-#body{
+/* visited link */
+a:visited{
+	text-decoration: none;
+
+}
+
+/* mouse over link */
+a:hover{
+	text-decoration: underline;
+	color: yellow;
+}
+
+/* selected link */
+a:active{
+	text-decoration: underline;
+	color: yellow;
+}
+
+p.italic{
+	font-style: italic;
+}
+
+p.bold{
+	font-weight: bold;
+}
+
+header{
+	padding-top: 20px;
+}
+
+body{
+	background-color: rgb(197, 203, 190);
+	background-image: url(../images/classImages/Pitchfork.png);
+	background-repeat: no-repeat;
+	background-position: bottom right;
+}
+
+p{
+	color: grey;
+	text-align: center;
 
 }
 
@@ -25,22 +66,58 @@ Vincent Nguyen
 	float: left;
 }
 
+header{
+	position: relative;
+	background-color: #578683;
+}
+
 #navigation{
 	text-align: center;
-	list-style-type: none;
+	list-style-type:
 	margin: 0;
 	padding: 0;
 	display: inline;
+
+}
+
+#navigation ul{
+	list-style-type: inline-block;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
 }
 
 #navigation li{
 	float: left;
 	display: inline;
+	list-style-type: square;
 }
 
 #navigation li a{
+	font-family: "Times New Roman", sans-serif;
+	font-size: 20px;
+	color: black;
+
+}
+
+
+#navigation a:link a:visited{
 	display: block;
 	width: 60px;
+	font-weight: bold;
+	color: #ffffff;
+	background-color: #4977bc;
+	text-align: center;
+	padding: 4px;
+	text-decoration: none;
+}
+
+#navigation a:hover{
+	background-color: rgb(53, 140, 98);
+}
+
+#navigation a:active{
+
 }
 
 .mini-login{
@@ -75,5 +152,41 @@ Vincent Nguyen
 }
 
 footer{
+	text-align: center;
+	float:inherit;
+	margin-top: 100px;
 
+}
+
+#main{
+	text-align: center;
+}
+
+#main h1{
+	font-size: 40px;
+}
+
+/* This is for the faq page */
+.question{
+	font-size: 32px;
+	font-weight: bold;
+	font-style: italic;
+	text-align: left;
+	padding-left: 100px;
+	color: rgb(160, 68, 90);
+}
+
+.answer{
+	text-align: center;
+	color: black;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+.answer~li{
+	text-align: center;
+}
+
+.subtitle{
+	font-style: italic;
 }
